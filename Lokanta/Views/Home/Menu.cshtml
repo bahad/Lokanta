@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Lokanta.Models.Menu>
+@{
+    Layout = null;
+}
+
+<div id="fh5co-menus" data-section="menu">
+    <div class="container">
+        <div class="row text-center fh5co-heading row-padded">
+            <div class="col-md-8 col-md-offset-2">
+                <h2 class="heading to-animate">Yemek Menusu</h2>
+                <p class="sub-heading to-animate">
+                    3 katlı yeni binasında 15 Ağustos 2018 tarihinden bu yana faaliyet
+                    gösteren Bahadır Yıldız'ın İşletmeciliğindeki mekan haftanın 7 günü
+                    09:30 ile 22:00 saatleri arasında hizmet vermektedir.
+                    Pizza, çeşitleri ve alkollü ve alkolsüz içecekleri bir  arada sunan foodee siz değerli müşterilerini bekliyor. .
+                </p>
+            </div>
+        </div>
+       
+        <div class="row row-padded">
+            <div class="col-md-6">
+                <div class="fh5co-food-menu to-animate-2">
+                    <h2 class="fh5co-drinks">Icecekler</h2>
+                    @foreach (var item in Model) {
+                        if (@item.menuTur == "Icecek") {
+            <ul>
+                <li>
+                    <div class="fh5co-food-desc">
+                        <figure>
+                            <img src="~/Uploads/images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+                        </figure>
+                        <div>
+                            <h3>@item.menuAd</h3>
+                            <p>@item.menuAciklama</p>
+                        </div>
+                    </div>
+                    <div class="fh5co-food-pricing">
+                        $@item.menuFiyat.ToString();
+                    </div>
+                </li>
+            </ul>
+                }
+            }
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="fh5co-food-menu to-animate-2">
+                    <h2 class="fh5co-drinks">Yemekler</h2>
+                    @foreach (var item in Model)
+            {
+                if (@item.menuTur == "Yiyecek")
+                {
+            <ul>
+                <li>
+                    <div class="fh5co-food-desc">
+                        <figure>
+                            <img src="~/Uploads/images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+                        </figure>
+                        <div>
+                            <h3>@item.menuAd</h3>
+                            <p>@item.menuAciklama</p>
+                        </div>
+                    </div>
+                    <div class="fh5co-food-pricing">
+                        $@item.menuFiyat.ToString();
+                    </div>
+                </li>
+            </ul>
+                }
+            }
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center to-animate-2">
+                <p><a href="#" class="btn btn-primary btn-outline">More Food Menu</a></p>
+            </div>
+        </div>
+         </div> </div>
