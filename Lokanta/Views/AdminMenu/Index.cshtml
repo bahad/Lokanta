@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Lokanta.Models.Menu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Menuler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Menu Ekle", "Create")
+</p>
+<div class="table-responsive">
+    <table class="table table-md">
+        <thead>
+            <tr>
+                <th>
+                    Menü Türü
+                </th>
+                <th>
+                    Menü Adı
+                </th>
+                <th>
+                    Fiyatı
+                </th>
+                <th>
+                    Açıklama
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="table-primary">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.menuTur)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.menuAd)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.menuFiyat)$
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.menuAciklama)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Duzenle", "Edit", new { id = item.menuID }) |
+                        @Html.ActionLink("Detaylar", "Details", new { id = item.menuID }) |
+                        @Html.ActionLink("Sil", "Delete", new { id = item.menuID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>

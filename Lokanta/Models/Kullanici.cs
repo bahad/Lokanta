@@ -14,7 +14,7 @@ namespace Lokanta.Models
         [StringLength(50)]
         public string kullaniciAd { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string kullaniciSifre { get; set; }
     }
 }

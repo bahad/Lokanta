@@ -1,0 +1,55 @@
+﻿@model Lokanta.Models.Menu
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Menu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.menuTur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menuTur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.menuAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menuAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.menuFiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menuFiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.menuAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menuAciklama)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Geri Dön", "Index")
+        </div>
+    }
+</div>

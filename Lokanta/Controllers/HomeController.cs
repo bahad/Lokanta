@@ -21,7 +21,7 @@ namespace Lokanta.Controllers
         }
         public ActionResult Menu()
         {
-            return View(db.Menu.ToList());
+            return View(db.Menu.ToList().Take(10));
         }
         public ActionResult Eventler()
         {
